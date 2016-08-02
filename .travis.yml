@@ -9,7 +9,7 @@ services:
 env:
   global:
     - RAILS_ENV: test
-    # DOCKER_COMPOSE_VERSION: 1.7
+    # DOCKER_COMPOSE_VERSION: 1.7.1
     - DOCKER_COMPOSE_VERSION: 1.4.2
 
 before_script:
