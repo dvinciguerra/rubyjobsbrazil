@@ -37,3 +37,13 @@ boot2docker ip
 Or
 
 [Docker beta](https://beta.docker.com/)
+
+```
+$ docker-compose up    # create/run containers
+$ docker-compose up -d # create/run containers in bg
+$ docker-compose start # start exiting containers
+$ docker-compose stop  # stop containers
+$ docker-compose rm -v # remove container
+$ docker-compose ps    # check containers
+$ docker-compose logs  # see output logs
+```
