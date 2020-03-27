@@ -1,65 +1,60 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'dotenv-rails', require: 'dotenv/rails-now'
+ruby '>= 2.4'
 
-# ruby '2.0.0'
-gem 'capistrano', '3.8.1'
-gem 'capistrano-bundler'
-gem 'capistrano-chruby'
-gem 'capistrano-rails'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'devise', '~> 3.5.2'
-gem 'figaro'
-gem 'foundation-icons-sass-rails', '~> 3.0.0'
-gem 'foundation-rails', '~> 5.5.2'
-gem 'jbuilder', '~> 2.0'
-gem 'kaminari'
-gem 'mysql2'
-gem 'net-ssh', '~> 2.9.2' # avoid build error
-gem 'rails', '~> 4.2'
-gem 'rake', '< 11.0'
-gem 'recruiter', '~>1.1.17'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'bootsnap', '>= 1.1.0', require: false
+gem 'dotenv-rails', '~> 2.4.0'
+gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+gem 'puma', '~> 3.12'
+gem 'rails', '~> 5.2.0'
 gem 'sass-rails', '~> 5.0'
-gem 'therubyracer', platforms: :ruby
+gem 'sentry-raven', '~> 2.7.3'
 gem 'uglifier', '>= 1.3.0'
 
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
-
-# gem 'unicorn' # causing timeouts
-
-group :test do
-  gem 'capybara'
-  # gem 'capybara-webkit', '>= 1.0.0'
-  gem 'database_cleaner'
-  # gem 'launchy'
-  gem 'coveralls', '~> 0.8.1', require: false
-  gem 'shoulda-matchers', require: false
-  gem 'simplecov', require: false
-  # gem 'timecop'
-  gem 'faker'
-  gem 'spring-commands-rspec'
-  gem 'webmock'
-end
+# recruiter dependencies
+gem 'devise', '>= 4.7.1'
+gem 'draper', '~> 3.0.1'
+gem 'foundation-icons-sass-rails', '~> 3.0.0'
+gem 'foundation-rails', '~> 5.4.5'
+gem 'jquery-rails', '~> 4.3.3'
+gem 'kaminari', '~> 1.1.1'
+gem 'makeup', '~>0.3.0'
+gem 'omniauth', '~> 1.8.1'
+gem 'omniauth-facebook', '~> 5.0.0'
+gem 'omniauth-github', '~> 1.3.0'
+gem 'omniauth-google_oauth2', '~> 0.1.5'
+gem 'redcarpet', '~> 3.4.0'
+gem 'simple_form', '~> 5.0.0'
 
 group :development, :test do
-  gem 'awesome_print'
-  # gem 'pry-rails'
-  gem 'machinist', '>= 2.0.0.beta2'
-  gem 'rspec-rails', '3.0.0.beta2'
-
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  # gem 'byebug'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'byebug', '~> 10.0.2', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails', '~> 3.7.2'
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'capistrano-bundler', '~> 1.3.0'
+  gem 'capistrano-chruby', '~> 0.1.2'
+  gem 'capistrano-rails', '~> 1.3.1'
+  gem 'listen', '~> 3.1.5'
+  gem 'rubocop', '~> 0.55.0'
+  gem 'spring', '~> 2.0.2'
+  gem 'spring-watcher-listen', '~> 2.0.1'
+  gem 'web-console', '~> 3.6.2'
 end
 
-group :staging, :production do
-  gem 'rack-timeout'
+group :test do
+  gem 'capybara', '~> 3.1.0'
+  gem 'chromedriver-helper', '~> 1.2.0'
+  gem 'coveralls', '~> 0.8.21', require: false
+  gem 'faker', '~> 1.8.7'
+  gem 'machinist', github: 'mjacobus/machinist', branch: 'fix-warning'
+  gem 'rails-controller-testing', '~> 1.0.2'
+  gem 'selenium-webdriver', '~> 3.12.0'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov', '~> 0.14.1', require: false
+  gem 'spring-commands-rspec', '~> 1.0.4'
 end

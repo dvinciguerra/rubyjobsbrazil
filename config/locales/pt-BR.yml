@@ -100,6 +100,7 @@ pt-BR:
     messages:
       accepted: deve ser aceito
       blank: não pode ficar em branco
+      required: não pode ficar em branco
       present: deve ficar em branco
       confirmation: não está de acordo com a confirmação
       empty: não pode ficar vazio
@@ -212,17 +213,17 @@ pt-BR:
       models:
         store:
     attributes:
-      recruiter/user:
+      user:
         name: Nome
         username: Nome
-      recruiter/job:
+      job:
         title: Título
         published_at: Publicação
         description: Descrição
         how_to_apply: Como se candidatar
         city: Cidade
         state_id: Estado
-      recruiter/article:
+      article:
         title: Título
         published_at: Publicação
         description: Descrição

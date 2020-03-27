@@ -1,32 +1,41 @@
+# frozen_string_literal: true
+
 require 'machinist/active_record'
 require 'faker'
 
-Recruiter::User.blueprint do
+User.blueprint do
   name     { "The Name #{sn}" }
   email    { "email#{sn}@example.com" }
   provider { 'github' }
   uid      { sn }
 end
 
-Recruiter::Job.blueprint do
+Job.blueprint do
   user
   title { "ruby job #{sn}" }
-  description { "the requirements" }
-  how_to_apply { "how to apply" }
+  description { 'the requirements' }
+  how_to_apply { 'how to apply' }
   city
 end
 
-Recruiter::State.blueprint do
+State.blueprint do
   name  { Faker::Address.city }
-  short { "#{sn}" }
+  short { sn.to_s }
 end
 
-Recruiter::City.blueprint do
+City.blueprint do
   name  { Faker::Address.city }
-  short { "#{sn}" }
+  short { sn.to_s }
   state
 end
 
-Recruiter::Tag.blueprint do
+Tag.blueprint do
   name { "tag #{sn}" }
+end
+
+Article.blueprint do
+  user
+  title { "ruby article #{sn}" }
+  body { 'article body' }
+  published { true }
 end
